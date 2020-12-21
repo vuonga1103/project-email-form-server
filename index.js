@@ -33,11 +33,12 @@ app.post('/api/form', (req, res) => {
      * 2. Include in it: 
      *      USERNAME=<your-email-username>
      *      PASSWORD=<your-password>
-     * 3. npm i dotenv
-     * 4. In the file you want to use the environment variables add
+     * 3. Add .env to .gitignore
+     * 4. npm i dotenv
+     * 5. In the file you want to use the environment variables add
      *      const dotenv = require('dotenv'); 
      *      dotenv.config();
-     * 5. Access the variable via process.env.USERNAME and process.env.PASSWORD
+     * 6. Access the variable via process.env.USERNAME and process.env.PASSWORD
      */
     const transporter = nodemailer.createTransport({
       service: 'gmail',
