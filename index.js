@@ -3,7 +3,8 @@
  * https://www.youtube.com/watch?v=HZOXPta21PI
  * https://www.youtube.com/watch?v=EPnBO8HgyRU
  */
-
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
@@ -25,11 +26,24 @@ app.post('/api/form', (req, res) => {
      * For gmail, should turn off 2-factor authentication, and set Allow less secure apps: to ON (https://myaccount.google.com/u/1/lesssecureapps)
      * 
      */
+
+    /**
+     * Steps to secure username and password
+     * 1. Create .env file
+     * 2. Include in it: 
+     *      USERNAME=<your-email-username>
+     *      PASSWORD=<your-password>
+     * 3. npm i dotenv
+     * 4. In the file you want to use the environment variables add
+     *      const dotenv = require('dotenv'); 
+     *      dotenv.config();
+     * 5. Access the variable via process.env.USERNAME and process.env.PASSWORD
+     */
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'USERNAME',
-        pass: 'PASSWORD'
+        user: process.env.USERNAME,
+        pass: process.env.PASSWORD
       }
     })
     const mailOptions = {
