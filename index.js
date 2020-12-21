@@ -20,6 +20,11 @@ app.post('/api/form', (req, res) => {
         Message: 
         ${req.body.message}
     `
+
+    /**
+     * For gmail, should turn off 2-factor authentication, and set Allow less secure apps: to ON (https://myaccount.google.com/u/1/lesssecureapps)
+     * 
+     */
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
