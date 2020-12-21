@@ -1,3 +1,9 @@
+/**
+ * Links to tutorials
+ * https://www.youtube.com/watch?v=HZOXPta21PI
+ * https://www.youtube.com/watch?v=EPnBO8HgyRU
+ */
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
