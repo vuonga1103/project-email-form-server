@@ -3,7 +3,6 @@ const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 const app = express()
 
-// parse form input to JSON
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
@@ -15,41 +14,11 @@ app.post('/api/form', (req, res) => {
         Message: 
         ${req.body.message}
     `
-    // const transporter = nodemailer.createTransport({
-    //   // host: 'smtp.mail.yahoo.com',
-    //   // port: 465,
-    //   service:'yahoo',
-    //   // secure: false,
-    //   auth: {
-    //      user: 'vuonga1103@yahoo.com',
-    //      pass: 'Purpletomat0'
-    //   },
-    //   // debug: false,
-    //   // logger: true
-    // });
-
-    // const mailOptions = {
-    //   from: '"Nodemailer Contact" <vuonga1103@yahoo.com>',
-    //   to: 'vuonga1103@yahoo.com',
-    //   replyTo: 'test@gmail.com',
-    //   subject: 'New Message',
-    //   text: req.body.message,
-    //   html: htmlEmail
-    // }
-
-    // transporter.sendMail(mailOptions, (err, info) => {
-    //   if (err) {
-    //     return console.log(err)
-    //   }
-
-    //   console.log('Message sent: %s', info.message)
-    //   console.log('Message URL: %s', nodemailer.getTestMessageUrl(info))
-    // })
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'algoanh1103',
-        pass: 'Rainbowtomat0!'
+        user: 'USERNAME',
+        pass: 'PASSWORD'
       }
     })
     const mailOptions = {
